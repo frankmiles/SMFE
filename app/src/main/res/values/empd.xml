@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="empd">
+      <item>Module- I</item>
+      <item>GENERAL PRINCIPLES OF DC MACHINES</item>
+      <item>Constructional Features</item>
+      <item>Methods of Excitation</item>
+      <item>Expression for EMF Induced and Torque Developed in the Armature</item>
+      <item>DC GENERATORS:</item>
+      <item>Conditions for Self Excitation</item>
+      <item>Critical Resistance and Critical Speed</item>
+      <item>Losses and Efficiency</item>
+      <item>-2Module-2</item>
+      <item>DC MOTORS:</item>
+      <item>Speed Armature Current</item>
+      <item>Torque Armature Current and Speed Torque Characteristic for (i) Separately Excited DC Motor</item>
+      <item>DC Shunt Motor</item>
+      <item>DC Series Motor</item>
+      <item>DC Compound Motor</item>
+      <item>Speed control and Starting of DC shunt and DC series motors</item>
+      <item>Brushless motors</item>
+      <item>Motor drive circuits</item>
+      <item>Module-3</item>
+      <item>TRANSFORMERS:</item>
+      <item>Constructional Features</item>
+      <item>EMF Equation</item>
+      <item>Turns Ratio</item>
+      <item>Determination of Parameters From Tests (Open Circuit Test and Short Circuit Test)</item>
+      <item>Equivalent Circuit</item>
+      <item>Losses and Efficiency</item>
+      <item>Introduction to Three Phase Transformers:</item>
+      <item>Three Single Phase Transformers Connected as a Bank of Three Phase Transformer</item>
+      <item>THREE PHASE SYNCHRONOUS MACHINES:</item>
+      <item>Constructional Features</item>
+      <item>Principle of operation as Alternator and Synchronous Motor</item>
+      <item>Synchronous Impedance</item>
+      <item>Voltage Regulation by Synchronous Impedance Method</item>
+      <item>Power-Angle curve</item>
+      <item>Synchronization of Alternators</item>
+      <item>Torque Expression and Phasor Diagram for Synchronous Motor</item>
+      <item>Electrical Power and Mechanical Power</item>
+      <item>Starting of Synchronous Motor</item>
+      <item>Module-5</item>
+      <item>THREE PHASE INDUCTION MOTORS:</item>
+      <item>Constructional Features of Squirrel Cage Rotor type and Slip Ring/Wound Rotor type of Induction Motors</item>
+      <item>Principle of Operation; Concept of Slip</item>
+      <item>Slip Torque Characteristics</item>
+      <item>Starting of Squirrel Cage Rotor type and Slip Ring/Wound Rotor type of Induction Motors</item>
+      <item>Speed Control of Induction Motors</item>
+      <item>SINGLE PHASE INDUCTION MOTORS and COMMUTATOR MOTORS:</item>
+      <item>Revolving Field Theory</item>
+      <item>Split Phase (capacitor start and run) and Shaded Pole Starting of Single Phase Induction Motors</item>
+      <item>Speed Current</item>
+      <item>Torque Current and Speed Torque Characteristic for Single Phase AC Series Motor</item>
+</string-array>
+</resources>

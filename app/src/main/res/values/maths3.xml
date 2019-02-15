@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="MATHS_3">
+        <item>MODULE: 1</item>
+        <item>Complex Analysis:</item>
+        <item>Analytic function</item>
+        <item>Cauchy-Riemann equations</item>
+        <item>Complex integration:</item>
+        <item>Line integral in the complex plane</item>
+        <item>Cauchys integral theorem</item>
+        <item>Cauchys integral formula</item>
+        <item>Derivatives of analytic functions</item>
+        <item>Taylors series</item>
+        <item>Maclaurins series</item>
+        <item>Laurents series</item>
+        <item>Singularities and zeros</item>
+        <item>MODULE: 2</item>
+        <item>Complex Analysis:</item>
+        <item>Residue integration method</item>
+        <item>evaluation of real integrals Numerical Methods:</item>
+        <item>Errors of numerical results</item>
+        <item>error propagation</item>
+        <item>Lagrange Interpolation</item>
+        <item>Newton divided difference interpolation</item>
+        <item>Newtons forward and backward interpolation</item>
+        <item>Spline interpolation</item>
+        <item>MODULE: 3</item>
+        <item>Numerical Methods:</item>
+        <item>Numerical integration:</item>
+        <item>The trapezoidal rule</item>
+        <item>The Simpsons rules</item>
+        <item>Gauss Integration formulas</item>
+        <item>Solution of ordinary differential equation:</item>
+        <item>Eulers method</item>
+        <item>Improvement of Eulers method</item>
+        <item>Runge-Kutta methods</item>
+        <item>multi step methods</item>
+        <item>Methods for system and higher order ordinary differential equations</item>
+        <item>MODULE: 4</item>
+        <item>Probability Theory and Its Applications:</item>
+        <item>Probability</item>
+        <item>Random variables</item>
+        <item>Probability distributions</item>
+        <item>Mean and variance</item>
+        <item>Features of Probability Distribution:</item>
+        <item>Binomial</item>
+        <item>Poisson</item>
+        <item>Uniform and Normal distribution</item>
+        <item>Distribution of several random variables</item>
+        <item>Statistical Techniques and Its Applications:</item>
+        <item>Scope of Statistics</item>
+        <item>Random sampling</item>
+        <item>Sampling Distribution</item>
+        <item>Correlation analysis</item>
+        <item>Regression Analysis</item>
+        <item>Fitting Straight Lines</item>
+        <item>Estimation of Parameters</item>
+        <item>Statistical Hypothesis</item>
+    </string-array>
+</resources>

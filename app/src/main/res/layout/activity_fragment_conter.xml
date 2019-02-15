@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentConter">
+
+    <fragment
+        android:id="@+id/searchFrag"
+        android:name="com.freeoda.franktirkey.smfe.SearchFrag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/chooseFrag"
+        android:name="com.freeoda.franktirkey.smfe.Select_Sem_SubjectFrag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        tools:layout="@layout/fragment_select__sem__subjectfrag" />
+
+</LinearLayout>

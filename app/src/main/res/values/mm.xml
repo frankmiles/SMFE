@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mm">
+      <item>Module-1</item>
+      <item>Introduction to 8 bit and 16 bit Microprocessors-H/W architecture</item>
+      <item>Introduction to microprocessor</item>
+      <item>computer and its organization</item>
+      <item>Programming system</item>
+      <item>Address bus</item>
+      <item>data bus and control bus</item>
+      <item>Tristate bus</item>
+      <item>clock generation</item>
+      <item>Connecting Microprocessor to I/O devices</item>
+      <item>Data transfer schemes</item>
+      <item>Architectural advancements of microprocessors</item>
+      <item>Introductory System design using microprocessors</item>
+      <item>8086 – Hardware Architecture</item>
+      <item>External memory addressing</item>
+      <item>Bus cycles</item>
+      <item>some important Companion Chips</item>
+      <item>Maximum mode bus cycle</item>
+      <item>8086 system configuration</item>
+      <item>Memory Interfacing</item>
+      <item>Minimum mode system configuration</item>
+      <item>Interrupt processing</item>
+      <item>Module-2</item>
+      <item>16-bit microprocessor instruction set and assembly language programming:</item>
+      <item>Programmers model of 8086</item>
+      <item>operand types</item>
+      <item>operand addressing</item>
+      <item>assembler directives</item>
+      <item>instruction Set-Data transfer group</item>
+      <item>Arithmetic group</item>
+      <item>Logical group</item>
+      <item>Microprocessor peripheral interfacing:</item>
+      <item>Introduction</item>
+      <item> Generation of I/O ports</item>
+      <item>Programmable Peripheral Interface (PPI)Intel 8255</item>
+      <item>Sample-and-Hold Circuit and Multiplexer</item>
+      <item>Keyboard and Display Interface</item>
+      <item>Keyboard and Display Controller (8279)</item>
+      <item>Module-4</item>
+      <item>8-bit microcontroller- H/W architecture instruction set and programming:</item>
+      <item>Introduction to 8051 Micro-Controllers</item>
+      <item>Architecture</item>
+      <item>Memory Organization</item>
+      <item>Special Function register</item>
+      <item>Port Operation</item>
+      <item>Memory Interfacing</item>
+      <item>I/O Interfacing</item>
+      <item>Programming 8051 resources</item>
+      <item>interrupts</item>
+      <item>Programmers model of 8051</item>
+      <item>Operand types</item>
+      <item>Operand addressing</item>
+      <item>Data transfer instructions</item>
+      <item>Arithmetic instructions</item>
+      <item>Logic instructions</item>
+      <item>Control transfer instructions</item>
+      <item>Programming</item>
+    </string-array>
+</resources>

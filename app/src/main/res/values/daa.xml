@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="DAA">
+        <item>MODULE: 1</item>
+        <item>Introduction</item>
+        <item>Definition</item>
+        <item>Chrematistics of algorithm</item>
+        <item>Growth of Functions</item>
+        <item>Asymptotic analysis</item>
+        <item>Amortized analysis</item>
+        <item>standard notations and common functions</item>
+        <item>Recurrences</item>
+        <item>solution of recurrences by substitution</item>
+        <item>recursion tree</item>
+        <item>induction method</item>
+        <item>and Master methods</item>
+        <item>Algorithm design techniques</item>
+        <item>worst case analysis of Merge sort</item>
+        <item>Quick sort and Binary search</item>
+        <item>Design and Analysis of Divide and conquer algorithms</item>
+        <item>MODULE: 2</item>
+        <item>Heapsort mechanism</item>
+        <item>Heaps</item>
+        <item>Building a heap</item>
+        <item>The heapsort algorithm</item>
+        <item>Priority Queue</item>
+        <item>Lower bounds for sorting</item>
+        <item>Dynamic programming methodology</item>
+        <item>Elements of dynamic programming</item>
+        <item>Matrix-chain multiplication</item>
+        <item>Longest common subsequence</item>
+        <item>Greedy Algorithms</item>
+        <item>Elements of Greedy strategy</item>
+        <item>Assembly-line scheduling</item>
+        <item>Activity selection Problem</item>
+        <item>Fractional knapsack problem</item>
+        <item>Huffman codes</item>
+        <item>MODULE: 3</item>
+        <item>Data structure for disjoint sets</item>
+        <item>Disjoint set operations</item>
+        <item>Linked list representation</item>
+        <item>path compression</item>
+        <item>Disjoint set forests</item>
+        <item>Graph Algorithms and their characteristics</item>
+        <item>Breadth first search and depth-first search</item>
+        <item>Minimum Spanning Trees</item>
+        <item>Kruskal algorithm and Prims algorithms</item>
+        <item>single- source shortest paths (Bellman-ford algorithm and Dijkstras algorithms)</item>
+        <item>All-pairs shortest paths (Floyd – Warshall Algorithm)</item>
+        <item>MODULE: 4</item>
+        <item>Back tracking</item>
+        <item>Branch and Bound</item>
+        <item>Eight Queen problem</item>
+        <item>string matching algorithms</item>
+        <item>naïve string matching algorithm</item>
+        <item>Rabin-Karp algorithm</item>
+        <item>Knuth–Morris–Pratt algorithm</item>
+        <item>NP - Completeness (Polynomial time, Polynomial time verification</item>
+        <item>NP - Completeness and reducibility</item>
+        <item>NP-Complete problems (without Proofs)</item>
+        <item>Approximation algorithms characteristics</item>
+        <item>Traveling Salesman Problem</item>
+
+    </string-array>
+</resources>

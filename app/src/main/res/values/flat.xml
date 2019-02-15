@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="FLAT">
+        <item>MODULE: 1</item>
+        <item>Mathematical preliminaries:</item>
+        <item>Alphabet</item>
+        <item>String</item>
+        <item>Languages</item>
+        <item>Grammars</item>
+        <item>Strings and operations on strings</item>
+        <item>Finite Automata:</item>
+        <item>Definition</item>
+        <item>Basic model</item>
+        <item>Types of Finite Automata</item>
+        <item>NFA vs. DFA</item>
+        <item>NFA to DFA conversion</item>
+        <item>Eliminating ε-transitions from NFA</item>
+        <item>NFA as a language acceptor</item>
+        <item>Minimization of Finite Automata</item>
+        <item>Design of DFA</item>
+        <item>MODULE: 2</item>
+        <item>Regular Expressions: Operators in Regular expressions</item>
+        <item>Building Finite Automata from Regular expression</item>
+        <item>Ardens theorem</item>
+        <item>Building Regular expression from Finite Automata</item>
+        <item>Pumping Lemma for Regular languages</item>
+        <item>Closure properties of Regular languages</item>
+        <item>CYK algorithm</item>
+        <item>Context Free Grammars:</item>
+        <item>Derivation and Parse Trees</item>
+        <item>Ambiguity</item>
+        <item>Elimination of Ambiguity</item>
+        <item>Simplification of a CFG</item>
+        <item>Chomsky and Greibach Normal Forms</item>
+        <item>Closure and Decision Properties of CFL</item>
+        <item>Pumping Lemma for CFL</item>
+        <item>MODULE: 3</item>
+        <item>Push Down Automata:</item>
+        <item>Basic Model</item>
+        <item>Components</item>
+        <item>Moves of a PDA</item>
+        <item>ID of a PDA</item>
+        <item>Design of a PDA</item>
+        <item>PDA to CFG and CGA to PDA conversion</item>
+        <item>Model</item>
+        <item>Components</item>
+        <item>move of a TM</item>
+        <item>ID of TM</item>
+        <item>design of a TM</item>
+        <item>Recursively Enumerable Languages</item>
+        <item>Variation of Turing Machine model</item>
+        <item>Universal Turing Machine and Undecidable problems</item>
+        <item>Undecidability of Post correspondence problem</item>
+        <item>Linear Bounded Automata and Context Sensitive Languages</item>
+        <item>Chomskys Hierarchy of Languages</item>
+        <item>MODULE: 4</item>
+        <item>Primitive Recursive functions:</item>
+        <item>µ- Recursive functions</item>
+        <item>Cantor and Godel numbering</item>
+        <item>Ackermanns function</item>
+        <item>Excursiveness of Ackermann and Turing computable functions</item>
+        <item>Church Turing hypothesis</item>
+        <item>Recursive and Recursively Enumerable sets</item>
+        <item>NP Completeness: P and NP</item>
+        <item>NP complete and NP Hard problems</item>
+    </string-array>
+</resources>

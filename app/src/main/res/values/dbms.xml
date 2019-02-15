@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="DBMS">
+        <item>MODULE: 1</item>
+        <item>Introduction to database Systems</item>
+        <item>advantages of database system over traditional file system</item>
+        <item>Basic concepts and Definitions, Database users</item>
+        <item>Database Language</item>
+        <item>Database System Architecture</item>
+        <item>Schemas</item>
+        <item>Sub Schemas</item>
+        <item>and Instances</item>
+        <item>database constraints</item>
+        <item>3-level database architecture</item>
+        <item>Data Abstraction</item>
+        <item>Data Independence</item>
+        <item>Mappings</item>
+        <item>Structure</item>
+        <item>Components and functions of DBMS</item>
+        <item>Data models</item>
+        <item>MODULE: 2</item>
+        <item>Entity relationship model</item>
+        <item>Components of ER model</item>
+        <item>Mapping E-R model to Relational schema</item>
+        <item>Network and Object Oriented Data models</item>
+        <item>Storage Strategies:</item>
+        <item>Detailed Storage Architecture</item>
+        <item>Storing Data</item>
+        <item>Magnetic Disk</item>
+        <item>RAID</item>
+        <item>Other Disks</item>
+        <item>Magnetic Tape</item>
+        <item>Storage Access</item>
+        <item>File and Record Organization</item>
+        <item>File Organizations and Indexes</item>
+        <item>Order Indices</item>
+        <item>B+ Tree Index Files</item>
+        <item>Hashing Data Dictionary</item>
+        <item>MODULE: 3</item>
+        <item>Relational Algebra</item>
+        <item>Tuple and Domain Relational Calculus</item>
+        <item>Relational Query Languages:</item>
+        <item>SQL and QBE</item>
+        <item>Database Design :-</item>
+        <item>Database development life cycle (DDLC)</item>
+        <item>Automated design tools</item>
+        <item>Functional dependency and Decomposition</item>
+        <item>Join strategies</item>
+        <item>Dependency Preservation and lossless Design</item>
+        <item>Normalization</item>
+        <item>Normal forms:1NF</item>
+        <item>2NF</item>
+        <item>3NF</item>
+        <item>and BCNF</item>
+        <item>Multi-valued Dependencies</item>
+        <item>4NF and 5NF</item>
+        <item>Query processing and optimization:</item>
+        <item>Evaluation of Relational Algebra Expressions</item>
+        <item>Query optimization</item>
+        <item>Query cost estimation</item>
+        <item>MODULE: 4</item>
+        <item>Transaction processing and concurrency control:</item>
+        <item>Transaction concepts</item>
+        <item>properties of transaction</item>
+        <item>concurrency control</item>
+        <item>locking and Timestamp methods for concurrency control schemes</item>
+        <item>Database Recovery System</item>
+        <item>Types of Data Base failure and Types of Database Recovery</item>
+        <item>Recovery techniques</item>
+        <item>fundamental concepts on Object-Oriented Database</item>
+        <item>Object relational database</item>
+        <item>distributed database</item>
+        <item>Parallel Database</item>
+        <item>Data warehousing and Data Mining and Big data and NoSQL</item>
+    </string-array>
+</resources>

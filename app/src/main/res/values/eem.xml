@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="eem">
+      <item>Module-1</item>
+      <item>Introduction:</item>
+      <item>(a) Measurement and Error: Definition, Accuracy and Precision; Significant Figures, Types of Errors.</item>
+      <item>(b) Standards of Measurement: Classification of Standards, Electrical Standards, IEEE Standards</item>
+      <item>Module-2</item>
+      <item>Measurement of Resistance, Inductance and Capacitance:</item>
+      <item>(a) Resistance: Measurement of Low Resistance by Kelvins Double Bridge , Measurement of Medium Resistance, Measurement of High Resistance, Measurement of Resistance of Insulating Materials, Portable Resistance Testing set (Mega ohm meter), Measurement of Insulation Resistance when Power is ON, Measurement of Resistance of Earth Connections</item>
+      <item>(b) Inductance: Measurement of Self Inductance by Ammeter and Voltmeter, and AC Bridges (Maxwell’s, Hay’s, and Anderson Bridges), Measurement of Mutual Inductance by Felicis Method</item>
+      <item>(c) Capacitance: Measurement of Capacitance by Ammeter and Voltmeter and AC Bridges (Owens, Schering and Wiens Bridge), Screening of Bridge Components and Wagnor Earthing Device</item>
+      <item>Module-3</item>
+      <item>Galvanometer:</item>
+      <item>Construction</item>
+      <item>Theory and Principle of operation of D Arsonval</item>
+      <item>Vibration (Moving Magnet and Moving Coil types)</item>
+      <item>and Ballistic Galvanometer</item>
+      <item>Influence of Resistance on Damping</item>
+      <item>Logarithmic decrement</item>
+      <item>Calibration of Galvanometers</item>
+      <item>Ammeter and Voltmeter:</item>
+      <item>Derivation for Deflecting Torque of</item>
+      <item>PMMC</item>
+      <item>MI (attraction and repulsion types)</item>
+      <item>Electro Dynamometer and Induction Type Ammeters and Voltmeters</item>
+      <item>Potentiometer:</item>
+      <item>Principle of operation of DC Potentiometers (Crompton, Vernier, Constant Resistance and Deflectional Potentiometer)</item>
+      <item>AC Potentiometers (Drysdale-Tinsley and GallTinsley Potentiometer</item>
+      <item>Module-4</item>
+      <item>Measurement of Power, Energy, Frequency and Power factor:</item>
+      <item>Measurement of single phase and three phase power by wattmeter</item>
+      <item>Construction</item>
+      <item>Theory and Principle of operation of:</item>
+      <item>(a) Electro-Dynamometer and Induction type Watt meters</item>
+      <item>(b) Single Phase and Poly Phase Induction Type Watt-hour meters</item>
+      <item>(c) Frequency Meters</item>
+      <item>(d) Power Factor Meters</item>
+      <item>Current Transformer and Potential Transformer:</item>
+      <item>Construction</item>
+      <item>Theory</item>
+      <item>Characteristics and Testing of CTs and PTs</item>
+      <item>Electronic Instruments for Measuring Basic Parameters:</item>
+      <item>Amplified DC Meters</item>
+      <item>AC Voltmeters using Rectifiers</item>
+      <item>True RMS Voltmeter</item>
+      <item>Considerations for choosing an Analog Voltmeter</item>
+      <item>Digital Voltmeters (Block Diagrams only)</item>
+      <item>Q-meter</item>
+    </string-array>
+</resources>

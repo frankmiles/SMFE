@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SMFE</string>
+    <string name="enter_usename">Enter Usename</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="TAC">I Accept Terms And Condition.</string>
+    <string name="login">LOGIN</string>
+    <string name="greeting">WELCOME TO SMFE (STUDY MATERIAL FOR ENGINEERING) HOPE! THIS WILL HELP YOU TO DO BETTER IN YOUR ACADEMICS</string>
+    <string name="signup">SIGNUP</string>
+    <string name="choose_your_branch">CHOOSE BRANCH</string>
+    <string name="electrical_and_electronics_engineering">ELECTRICAL AND ELECTRONICS ENGINEERING</string>
+    <string name="electronics_and_communication_engineering">ELECTRONICS AND COMMUNICATION ENGINEERING</string>
+    <string name="computer_science_and_engineering">COMPUTER SCIENCE AND ENGINEERING</string>
+    <string name="ece">ece</string>
+    <string name="eee">eee</string>
+    <string name="cse">cse</string>
+    <string name="update_coming_soon">UPDATE COMING SOON!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_archive">Search Archive</string>
+    <string name="search">SEARCH</string>
+    <string name="result_will_be_displaied_here">Result will be displaied here</string>
+    <string name="by_frankmiles">By @FrankMiles</string>
+    <string name="choose_semester_and_subject">Choose Semester Or Subject</string>
+    <string name="_4th_sem">4th Sem</string>
+    <string name="tome">TOME</string>
+    <string name="_5th_sem">5th Sem</string>
+    <string name="helping_names">Kits Salazar(CSE), Rohan Mandal(ECE)</string>
+    <string name="helped_by">Helped by:</string>
+</resources>

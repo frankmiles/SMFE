@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="CAO">
+        <item>MODULE: 1</item>
+        <item>Basic Structures Of Computers:</item>
+        <item>Computer Architecture vs Computer organisation</item>
+        <item>Functional Units</item>
+        <item>Operational Concepts</item>
+        <item>Registers</item>
+        <item>Bus and Bus organisation</item>
+        <item>Memory location and address</item>
+        <item>Big-endian and Little-endian representation</item>
+        <item>MODULE: 2</item>
+        <item>Basic Processing Units:;</item>
+        <item>Fundamental Concepts</item>
+        <item>Instruction Format</item>
+        <item>Instruction Set</item>
+        <item>Addressing mode</item>
+        <item>Instruction Sequencing</item>
+        <item>Execution cycle</item>
+        <item>Hardwired control</item>
+        <item>Micro programmed control</item>
+        <item>Memory System:</item>
+        <item>Basic Concepts</item>
+        <item>Memory hierarchy</item>
+        <item>Main Memory</item>
+        <item>Second Storage</item>
+        <item>Cache Memory</item>
+        <item>MODULE: 3</item>
+        <item>Arithmatic:</item>
+        <item> Addition and Subtraction of signed and unsigned numbers </item>
+        <item>Multiplication of signed and unsigned numbers</item>
+        <item>Booth Multiplier, Array Multiplier</item>
+        <item>Integer Division</item>
+        <item>Floating- point Numbers and operations</item>
+        <item>MODULE: 4</item>
+        <item>Microprocessors</item>
+        <item>Instruction set</item>
+        <item>Assembly Language Programming</item>
+        <item>Stack, Subroutine</item>
+        <item>Interrupt, Accessing I/O devices</item>
+        <item>Standard I/O Interfaces- RS-232C</item>
+        <item>IEEE-488</item>
+        <item>USB</item>
+        <item>Data Transfer techniques</item>
+    </string-array>
+</resources>

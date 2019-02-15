@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ee">
+      <item>Module-1</item>
+      <item>Cartesian</item>
+      <item>Cylindrical and Spherical Coordinate Systems</item>
+      <item>Scalar and Vector Fields</item>
+      <item>Line</item>
+      <item>Surface and Volume Integrals</item>
+      <item>Coulombs Law</item>
+      <item>The Electric Field Intensity</item>
+      <item>Electric Flux Density and Electric Flux</item>
+      <item>Gauss s Law</item>
+      <item>Divergence of Electric Flux Density:</item>
+      <item>Point Form of Gausss Law</item>
+      <item>The Divergence Theorem</item>
+      <item>The Potential Gradient</item>
+      <item> Energy Density</item>
+      <item>Poissons and Laplaces Equations</item>
+      <item>Amperes Magnetic Circuital Law and its Applications</item>
+      <item>Curl of H</item>
+      <item>Stokes Theorem</item>
+      <item>Divergence of B</item>
+      <item>Energy Stored in the Magnetic Field</item>
+      <item>Module-2</item>
+      <item>The Continuity Equation</item>
+      <item>Faraday’s Law of Electromagnetic Induction</item>
+      <item>Conduction Current:</item>
+      <item>Point Form of Ohms Law</item>
+      <item>Convection Current</item>
+      <item>The Displacement Current</item>
+      <item>Maxwells Equations in Differential Form</item>
+      <item>Maxwells Equations in Integral Form</item>
+      <item>Maxwells Equations for Sinusoidal Variation of Fields with Time</item>
+      <item>Boundary Conditions</item>
+      <item>The Retarded Potential</item>
+      <item>The Poynting Vector</item>
+      <item>Poynting Vector for Fields Varying Sinusoid ally with Time</item>
+      <item>Module-3</item>
+      <item>Solution of the One-Dimensional Wave Equation</item>
+      <item>Solution of Wave Equation for Sinusoid ally Time-Varying Fields</item>
+      <item>Polarization of Uniform Plane Waves</item>
+      <item>Fields on the Surface of a Perfect Conductor</item>
+      <item>Reflection of a Uniform Plane Wave Incident Normally on a Perfect Conductor and at the Interface of Two Dielectric Regions</item>
+      <item>The Standing Wave Ratio</item>
+      <item>Oblique Incidence of a Plane Wave at the Boundary between Two Regions</item>
+      <item>Oblique Incidence of a Plane Wave on a Flat Perfect Conductor and at the Boundary between Two Perfect Dielectric Regions</item>
+      <item>Module-4</item>
+      <item>Types of Two-Conductor Transmission Lines</item>
+      <item>Circuit Model of a Uniform TwoConductor Transmission Line</item>
+      <item>The Uniform Ideal Transmission Line</item>
+      <item>Wave Reflection at a Discontinuity in an Ideal Transmission Line</item>
+      <item>Matching of Transmission Lines with Load</item>
+    </string-array>
+</resources>
