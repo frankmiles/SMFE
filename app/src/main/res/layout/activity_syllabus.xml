@@ -14,7 +14,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="@string/result_will_be_displaied_here"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/accent"
         android:textStyle="normal|bold" />
 
     <ListView

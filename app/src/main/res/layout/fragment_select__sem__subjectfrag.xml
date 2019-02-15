@@ -15,7 +15,7 @@
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="@string/choose_semester_and_subject"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/accent"
         android:textSize="18sp"
         android:textStyle="bold" />
 

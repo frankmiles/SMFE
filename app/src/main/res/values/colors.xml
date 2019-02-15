@@ -7,4 +7,5 @@
     <color name="Radio">#7D49CEFF</color>
     <color name="Search">#BEFFFFFF</color>
     <color name="Subject_name_result_textView">#A1000000</color>
+    <color name="inputFields">#87ADA9A9</color>
 </resources>
