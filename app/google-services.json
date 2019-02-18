@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "252544347646",
+    "firebase_url": "https://smfe-frankmiles.firebaseio.com",
+    "project_id": "smfe-frankmiles",
+    "storage_bucket": "smfe-frankmiles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252544347646:android:8aeca56c1e280070",
+        "android_client_info": {
+          "package_name": "com.freeoda.franktirkey.smfe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252544347646-4d8r9g5abv6t9mdopc7h0j4rmcqtkjmg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeoda.franktirkey.smfe",
+            "certificate_hash": "3e91d8d728e080127bc59a8a4c4a8d762041abc3"
+          }
+        },
+        {
+          "client_id": "252544347646-rlo0pateounnab3bttr3tjh4udj6lanp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh2Vnjyg5aKpPvpqTGiACwFITbeGZWAIs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252544347646-rlo0pateounnab3bttr3tjh4udj6lanp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

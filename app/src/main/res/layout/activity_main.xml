@@ -22,13 +22,27 @@
         android:textSize="18sp"
         android:textStyle="bold|italic" />
 
+    <TextView
+        android:id="@+id/tvQuotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/the_expert_in_everything_was_once_a_beginner"
+        android:textColor="@color/accent"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
     <Button
         android:id="@+id/btnGreet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/buttons"
         android:gravity="center_horizontal"

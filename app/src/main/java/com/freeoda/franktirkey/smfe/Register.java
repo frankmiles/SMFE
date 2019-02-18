@@ -18,9 +18,16 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
+import com.backendless.push.DeviceRegistrationResult;
+import com.google.firebase.analytics.FirebaseAnalytics;
+
+import java.security.PrivateKey;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Register extends AppCompatActivity {
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     public static final String myPrefFile = "com.franktirkey.freeoda.prefFile";
     private View mProgressView;
     private View mLoginFormView;
@@ -36,6 +43,7 @@ public class Register extends AppCompatActivity {
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
+        tvLoad.setText("Connecting to server... Sending Registration request...");
 
         etName = findViewById(R.id.etName);
         etMail = findViewById(R.id.etMail);
@@ -53,13 +61,14 @@ public class Register extends AppCompatActivity {
                 else{
                     if(etPassword.getText().toString().equals(etReEnter.getText().toString())){
                         String name = etName.getText().toString().trim();
-                        String email = etMail.getText().toString().trim();
+                        final String email = etMail.getText().toString().trim();
                         String password = etPassword.getText().toString().trim();
-
+                        //----------------------
                         BackendlessUser user = new BackendlessUser();
                         user.setEmail(email);
                         user.setPassword(password);
                         user.setProperty("name",name);
+                        //------------------------
 
                         showProgress(true);
                         tvLoad.setText("Registering Please wait!");
@@ -70,8 +79,12 @@ public class Register extends AppCompatActivity {
                                 showProgress(false);
                                 Toast.makeText(Register.this,"Successfully Registered",Toast.LENGTH_SHORT).show();
 
+                                Login login = new Login(); //login class
+                                login.setMailAuto(email);
+
                                 SharedPreferences.Editor editor = getSharedPreferences(myPrefFile,MODE_PRIVATE).edit();
                                 editor.putString("user",etName.getText().toString().trim().toUpperCase());
+                                editor.putString("mail",etMail.getText().toString().trim());
                                 editor.apply();
 
                                 Register.this.finish();

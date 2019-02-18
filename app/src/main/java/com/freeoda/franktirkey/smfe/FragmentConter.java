@@ -13,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import java.util.zip.Inflater;
 /*
     this will have the fargments like searchFrag and select_Sem_SubjectFrag
@@ -21,6 +23,7 @@ import java.util.zip.Inflater;
 
 public class FragmentConter extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     ListView lvSubjects;
     SearchView searchView;
     ArrayAdapter<String> adapter;
@@ -40,6 +43,8 @@ public class FragmentConter extends AppCompatActivity implements SearchView.OnQu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_conter);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         searchView =  findViewById(R.id.searchView);
         lvSubjects = findViewById(R.id.lvSubjects);

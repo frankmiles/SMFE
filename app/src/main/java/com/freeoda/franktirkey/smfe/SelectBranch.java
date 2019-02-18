@@ -7,18 +7,23 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 /*
     JUST BRANCH AND SOME OTHER FEATURES MAYBE LIKE SEARCHING, OR MAYBE NO OF DAYS ATTENDED CLASS, CLASS LECTURE NOTE FOR REVISION, HIGHLIGHTED TOPICS.
     -> FragmentConter
  */
 public class SelectBranch extends AppCompatActivity {
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     ImageButton ibtnCse,ibtnEce;
     public String branch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_branch);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         ibtnCse = findViewById(R.id.ibtnCse);
         ibtnEce = findViewById(R.id.ibtnEce);

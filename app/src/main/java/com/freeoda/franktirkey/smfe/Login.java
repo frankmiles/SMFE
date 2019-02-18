@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,31 +19,54 @@ import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 import com.backendless.persistence.local.UserIdStorageFactory;
+import com.google.firebase.analytics.FirebaseAnalytics;
+
+import java.util.Date;
 
 public class Login extends AppCompatActivity {
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     private View mProgressView;
     private View mLoginFormView;
     private TextView tvLoad;
 
     EditText etMail,etPassword;
     Button btnLogin,btnRegister;
-    TextView tvReset;
+    TextView tvReset,tvVersion;
+    public static final String myPrefFile = "com.franktirkey.freeoda.prefFile";
+    String mailAuto;
+
+    public void setMailAuto(String mailAuto) {
+        this.mailAuto = mailAuto;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
+        tvLoad.setText("Connecting to server... Requesting data...");
 
         etMail = findViewById(R.id.etMail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
         tvReset = findViewById(R.id.tvReset);
+        tvVersion = findViewById(R.id.tvVersion);
+
+        tvVersion.setText("Version: 2.5.0");
+
+        //-----------------------------------mail AutoComplete
+        etMail.setText(mailAuto);
+        SharedPreferences pref = getSharedPreferences(myPrefFile,MODE_PRIVATE);
+        final String mail = pref.getString("mail","");
+        etMail.setText(mail);
+        //-------------------------------------------
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

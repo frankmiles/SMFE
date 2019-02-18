@@ -81,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:divider="@color/divider"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="horizontal">
 
@@ -112,17 +113,28 @@
 
         <TextView
             android:id="@+id/tvReset"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center_horizontal"
             android:text="@string/forget_password"
             android:textColor="@android:color/holo_red_light"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:text="version:"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
 
     </LinearLayout>
 

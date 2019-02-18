@@ -6,8 +6,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class Syllabus extends AppCompatActivity {
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     TextView tvResult;
     ListView lvSyllabus;
     ArrayAdapter<String> adapter;
@@ -15,6 +18,9 @@ public class Syllabus extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         setContentView(R.layout.activity_syllabus);
             tvResult = findViewById(R.id.tvResult);
             lvSyllabus = findViewById(R.id.lvSyllabus);
