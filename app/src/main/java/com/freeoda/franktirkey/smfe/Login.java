@@ -19,9 +19,12 @@ import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 import com.backendless.persistence.local.UserIdStorageFactory;
+import com.backendless.push.DeviceRegistrationResult;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Login extends AppCompatActivity {
 
@@ -47,6 +50,25 @@ public class Login extends AppCompatActivity {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        //------------------------------------- BackendLess and FireBase Integration and device register--
+
+        List<String> channels = new ArrayList<String>();
+        channels.add( "default" ); // channel name for testing
+        Backendless.Messaging.registerDevice(channels, new AsyncCallback<DeviceRegistrationResult>() {
+            @Override
+            public void handleResponse(DeviceRegistrationResult response) {
+                Toast.makeText( Login.this, "Device registered!",
+                        Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+                Toast.makeText( Login.this, "Error registering " + fault.getMessage(),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        //-------------------------------------
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
@@ -59,7 +81,7 @@ public class Login extends AppCompatActivity {
         tvReset = findViewById(R.id.tvReset);
         tvVersion = findViewById(R.id.tvVersion);
 
-        tvVersion.setText("Version: 2.5.0");
+        tvVersion.setText("Version: 2.9.1");
 
         //-----------------------------------mail AutoComplete
         etMail.setText(mailAuto);

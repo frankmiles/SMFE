@@ -87,6 +87,25 @@ public class Register extends AppCompatActivity {
                                 editor.putString("mail",etMail.getText().toString().trim());
                                 editor.apply();
 
+                                //------------------------------------- BackendLess and FireBase Integration and device register--
+
+                                List<String> channels = new ArrayList<String>();
+                                channels.add( "default" ); // channel name for testing
+                                Backendless.Messaging.registerDevice(channels, new AsyncCallback<DeviceRegistrationResult>() {
+                                    @Override
+                                    public void handleResponse(DeviceRegistrationResult response) {
+                                        Toast.makeText( Register.this, "Device registered!",
+                                                Toast.LENGTH_LONG).show();
+                                    }
+
+                                    @Override
+                                    public void handleFault(BackendlessFault fault) {
+                                        Toast.makeText( Register.this, "Error registering " + fault.getMessage(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                                //-------------------------------------
+
                                 Register.this.finish();
                             }
 

@@ -104,6 +104,7 @@
             android:text="@string/register"
             android:textColor="#ffffff"
             android:textStyle="bold" />
+
     </LinearLayout>
 
 
