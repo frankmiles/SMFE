@@ -50,6 +50,27 @@ public class Login extends AppCompatActivity {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
+        tvLoad = findViewById(R.id.tvLoad);
+        tvLoad.setText("Connecting to server... Requesting data...");
+
+        etMail = findViewById(R.id.etMail);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
+        tvReset = findViewById(R.id.tvReset);
+        tvVersion = findViewById(R.id.tvVersion);
+
+        tvVersion.setText("Version: 2.9.1");
+
+        //-----------------------------------mail AutoComplete
+        etMail.setText(mailAuto);
+        final SharedPreferences pref = getSharedPreferences(myPrefFile,MODE_PRIVATE);
+        final String mail = pref.getString("mail","");
+        etMail.setText(mail);
+        //-------------------------------------------
+
         //------------------------------------- BackendLess and FireBase Integration and device register--
 
         List<String> channels = new ArrayList<String>();
@@ -69,26 +90,7 @@ public class Login extends AppCompatActivity {
         });
         //-------------------------------------
 
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
-        tvLoad = findViewById(R.id.tvLoad);
-        tvLoad.setText("Connecting to server... Requesting data...");
 
-        etMail = findViewById(R.id.etMail);
-        etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
-        tvReset = findViewById(R.id.tvReset);
-        tvVersion = findViewById(R.id.tvVersion);
-
-        tvVersion.setText("Version: 2.9.1");
-
-        //-----------------------------------mail AutoComplete
-        etMail.setText(mailAuto);
-        SharedPreferences pref = getSharedPreferences(myPrefFile,MODE_PRIVATE);
-        final String mail = pref.getString("mail","");
-        etMail.setText(mail);
-        //-------------------------------------------
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +99,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,"Enter all fields",Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    String email = etMail.getText().toString().trim();
+                    final String email = etMail.getText().toString().trim();
                     String password = etPassword.getText().toString().trim();
 
                     showProgress(true);
@@ -107,6 +109,9 @@ public class Login extends AppCompatActivity {
                         public void handleResponse(BackendlessUser response) {
                             Toast.makeText(Login.this,"Login Successfully",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Login.this,MainActivity.class));
+                            SharedPreferences.Editor prefedit= getSharedPreferences(myPrefFile,MODE_PRIVATE).edit();
+                            prefedit.putString("mail",etMail.getText().toString().trim());
+                            prefedit.apply();
                             Login.this.finish();
                         }
 

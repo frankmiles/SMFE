@@ -7,6 +7,8 @@ import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        //Menu------------------------
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayUseLogoEnabled(true);
+
+        //---------------------------------------------
 
         //--------------------------------------------------Firebase Analytics
 //         Bundle bundle = new Bundle();
@@ -111,5 +120,34 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()){
+
+            case R.id.feedback:
+                Toast.makeText(MainActivity.this,"feedback Clicked",Toast.LENGTH_SHORT).show();
+
+                //----------------------------feedback Intent
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/html");
+                intent.putExtra(Intent.EXTRA_EMAIL,"franktirkey@gmail.com");
+                startActivity(Intent.createChooser(intent,"Send Mail to" + " FrankMiles"));
+
+                //---------------------------------------------
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

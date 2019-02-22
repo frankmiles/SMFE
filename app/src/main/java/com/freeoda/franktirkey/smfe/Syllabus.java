@@ -18,6 +18,7 @@ public class Syllabus extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
@@ -48,10 +49,10 @@ public class Syllabus extends AppCompatActivity {
                 disp = getResources().getStringArray(R.array.FLAT);
             }
             if (value.equals("DAA")){
-                disp = getResources().getStringArray(R.array.DAA);;
+                disp = getResources().getStringArray(R.array.DAA);
             }
             if (value.equals("MATHS")){
-                disp = getResources().getStringArray(R.array.MATHS_3);;
+                disp = getResources().getStringArray(R.array.MATHS_3);
             }
         }
 

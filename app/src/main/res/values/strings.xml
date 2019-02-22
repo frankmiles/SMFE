@@ -42,4 +42,6 @@
     <string name="redirecting_to_whatsapp">Redirecting to WhatsApp...</string>
     <string name="the_expert_in_everything_was_once_a_beginner">The expert in everything was once a beginner.</string>
     <string name="version">version:</string>
+    <string name="serverRequest">Connecting to server... Sending Registration request...</string>
+    <string name="registeringToServer">Registering Please wait!</string>
 </resources>

@@ -43,7 +43,7 @@ public class Register extends AppCompatActivity {
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
-        tvLoad.setText("Connecting to server... Sending Registration request...");
+        tvLoad.setText(getString(R.string.serverRequest));
 
         etName = findViewById(R.id.etName);
         etMail = findViewById(R.id.etMail);
@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
                         //------------------------
 
                         showProgress(true);
-                        tvLoad.setText("Registering Please wait!");
+                        tvLoad.setText(getString(R.string.registeringToServer));
 
                         Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>() {
                             @Override
