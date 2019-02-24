@@ -9,5 +9,11 @@
         android:icon="@drawable/feedback">
 
     </item>
+    <item android:id="@+id/downloadUpdate"
+        android:title="refresh"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/update">
 
+    </item>
 </menu>

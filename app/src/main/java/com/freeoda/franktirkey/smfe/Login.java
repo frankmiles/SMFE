@@ -54,7 +54,6 @@ public class Login extends AppCompatActivity {
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
         tvLoad.setText("Connecting to server... Requesting data...");
-
         etMail = findViewById(R.id.etMail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
@@ -62,7 +61,7 @@ public class Login extends AppCompatActivity {
         tvReset = findViewById(R.id.tvReset);
         tvVersion = findViewById(R.id.tvVersion);
 
-        tvVersion.setText("Version: 2.9.1");
+        tvVersion.setText(getString(R.string.version)+ Build.VERSION.RELEASE);
 
         //-----------------------------------mail AutoComplete
         etMail.setText(mailAuto);

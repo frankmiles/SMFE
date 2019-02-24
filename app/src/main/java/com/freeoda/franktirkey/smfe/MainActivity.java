@@ -1,12 +1,27 @@
 package com.freeoda.franktirkey.smfe;
 
+import android.Manifest;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.Build;
 import android.os.CountDownTimer;
+import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +35,11 @@ import com.backendless.exceptions.BackendlessFault;
 import com.backendless.push.DeviceRegistrationResult;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -69,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
         Backendless.Messaging.registerDevice(channels, new AsyncCallback<DeviceRegistrationResult>() {
             @Override
             public void handleResponse(DeviceRegistrationResult response) {
-                Toast.makeText( MainActivity.this, "Device registered!",
-                        Toast.LENGTH_LONG).show();
+
                 deviceClearance = true;
             }
 
@@ -82,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //-------------------------------------
 
-        CountDownTimer count = new CountDownTimer(10000,1000){
+        CountDownTimer count = new CountDownTimer(5000,1000){
             public void onTick(long millisUntilFinished){
                 timer = false;
                 btnGreeting.setBackground(getResources().getDrawable(R.drawable.button_fade));
@@ -146,8 +164,69 @@ public class MainActivity extends AppCompatActivity {
                 //---------------------------------------------
 
                 break;
+            case R.id.downloadUpdate:
+
+                Toast.makeText(MainActivity.this,"Checking for updates...",Toast.LENGTH_LONG).show();
+
+                ConnectivityManager conMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+
+                if ( conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED
+                        || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED ) {
+
+                    CountDownTimer count = new CountDownTimer(10000,1000){
+                        public void onTick(long millisUntilFinished){
+
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            Toast.makeText(MainActivity.this,"Downloading see notification bar",Toast.LENGTH_LONG).show();
+                            trigerUpdateDownload();
+                        }
+                    }.start();
+                }
+
+                else if ( conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.DISCONNECTED
+                        || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.DISCONNECTED) {
+
+                    Toast.makeText(MainActivity.this,"Not Connected to Internet",Toast.LENGTH_LONG).show();
+                }
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    //---------------------Downloading Update Stuff
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
+            DownloadManager downloadManager = (DownloadManager) getSystemService(MainActivity.DOWNLOAD_SERVICE);
+            Uri uri = Uri.parse("https://backendlessappcontent.com/9BDC094E-E5BB-70DE-FF63-69DAE6EBBD00/E453D360-7CB0-0699-FF8D-2AB0E7481700/files/SMFE.apk");
+            DownloadManager.Request request = new DownloadManager.Request(uri);
+            request.setTitle("SMFE");
+            request.setDescription("Downloading");
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "SMFE.apk");
+            long downloadID = downloadManager.enqueue(request);
+
+        }
+        else{
+
+            Toast.makeText(MainActivity.this,"Please allow the permission",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void trigerUpdateDownload(){
+
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]
+                {Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+
+
+    }
+    //-------------------------------------------------------------
+
 }

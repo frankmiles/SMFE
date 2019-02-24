@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#C2C4C0</color>
     <color name="colorPrimaryDark">#008585</color>
     <color name="colorAccent">#FCF80B0B</color>
-    <color name="colorPrimaryLight">#FF9800</color>
+    <color name="colorPrimaryLight">#E40404</color>
     <color name="Radio">#7D49CEFF</color>
     <color name="Search">#BEFFFFFF</color>
     <color name="Subject_name_result_textView">#A1000000</color>
