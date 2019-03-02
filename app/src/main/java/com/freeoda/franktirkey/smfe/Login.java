@@ -47,6 +47,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
@@ -61,7 +62,7 @@ public class Login extends AppCompatActivity {
         tvReset = findViewById(R.id.tvReset);
         tvVersion = findViewById(R.id.tvVersion);
 
-        tvVersion.setText(getString(R.string.version)+ Build.VERSION.RELEASE);
+        tvVersion.setText(getString(R.string.version));
 
         //-----------------------------------mail AutoComplete
         etMail.setText(mailAuto);

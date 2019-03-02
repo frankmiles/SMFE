@@ -40,5 +40,5 @@
     <string name="registeringToServer">Registering Please wait!</string>
     <string name="progress_board">Progress Board</string>
     <string name="now_in_development_phase">Now in Development phase!</string>
-    <string name="version">Version:</string>
+    <string name="version">Version: 8.1.0</string>
 </resources>
