@@ -83,7 +83,7 @@ public class Register extends AppCompatActivity {
                                 login.setMailAuto(email);
 
                                 SharedPreferences.Editor editor = getSharedPreferences(myPrefFile,MODE_PRIVATE).edit();
-                                editor.putString("user",etName.getText().toString().trim().toUpperCase());
+                                editor.putString("name",etName.getText().toString().trim());
                                 editor.putString("mail",etMail.getText().toString().trim());
                                 editor.apply();
 

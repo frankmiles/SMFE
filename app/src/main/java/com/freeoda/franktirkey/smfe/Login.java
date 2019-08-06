@@ -100,7 +100,7 @@ public class Login extends AppCompatActivity {
                 }
                 else{
                     final String email = etMail.getText().toString().trim();
-                    String password = etPassword.getText().toString().trim();
+                    final String password = etPassword.getText().toString().trim();
 
                     showProgress(true);
 
@@ -108,11 +108,24 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void handleResponse(BackendlessUser response) {
                             Toast.makeText(Login.this,"Login Successfully",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Login.this,MainActivity.class));
                             SharedPreferences.Editor prefedit= getSharedPreferences(myPrefFile,MODE_PRIVATE).edit();
                             prefedit.putString("mail",etMail.getText().toString().trim());
                             prefedit.apply();
                             Login.this.finish();
+
+                            BackendlessUser user = Backendless.UserService.CurrentUser();
+                            if( user != null )
+                            {
+                                // get user's phone number (i.e. custom property)
+                                String name = (String) user.getProperty( "name" );
+                                Toast.makeText( Login.this,
+                                        String.format( "Welcome ", name ),
+                                        Toast.LENGTH_LONG ).show();
+                                prefedit.putString("name",name);
+                                prefedit.apply();
+                            }
+
+                            startActivity(new Intent(Login.this,MainActivity.class));
                         }
 
                         @Override
@@ -175,8 +188,9 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void handleResponse(BackendlessUser response) {
                             startActivity(new Intent(Login.this,MainActivity.class));
-                            Toast.makeText(Login.this,"Loged you in! ",Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(Login.this,"Loged you in! ",Toast.LENGTH_SHORT).show();
                             Login.this.finish();
+
                         }
 
                         @Override

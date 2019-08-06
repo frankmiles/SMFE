@@ -1,6 +1,7 @@
 package com.freeoda.franktirkey.smfe;
 
 import android.Manifest;
+import android.accessibilityservice.AccessibilityService;
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
+import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 import com.backendless.push.DeviceRegistrationResult;
@@ -47,9 +49,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
     TextView tvGreeting;
     Button btnGreeting,btnChat;
-    String username =" ",buttonGreeting = " ";
+    String username ="Error 554/SPrefViolate";
+    String buttonGreeting = " ";
     boolean deviceClearance = false,timer = false ;
     public static final String myPrefFile = "com.franktirkey.freeoda.prefFile";
+
+    private static int devRegError = 0;
+    public static boolean devRegistraton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         //---------------------------------------------
 
-        //--------------------------------------------------Firebase Analytics
+        //---------------------------Firebase Analytics
 //         Bundle bundle = new Bundle();
 //        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
 //        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
@@ -78,49 +84,42 @@ public class MainActivity extends AppCompatActivity {
         btnChat = findViewById(R.id.btnChat);
 
         buttonGreeting = btnGreeting.getText().toString();
-        SharedPreferences pref = getSharedPreferences(myPrefFile,MODE_PRIVATE);
-        tvGreeting.setText("WELCOME "+pref.getString("user", " ")+
-                " TO SMFE (STUDY MATERIAL FOR ENGINEERING) HOPE! THIS WILL HELP YOU TO DO BETTER IN YOUR ACADEMICS");
+
+        setUserFromBackendless();
+
+        tvGreeting.setText("WELCOME "+username+
+                " TO SMFE (STUDY MATERIAL FOR ENGINEERING) HOPE! " +
+                "THIS WILL HELP YOU TO DO BETTER IN YOUR ACADEMICS"
+                +"\n Version: 9.2.0 Release");
 
 
         //------------------------------------- BackendLess and FireBase Integration and device register--
 
-        List<String> channels = new ArrayList<String>();
-        channels.add( "default" ); // channel name for testing
-        Backendless.Messaging.registerDevice(channels, new AsyncCallback<DeviceRegistrationResult>() {
-            @Override
-            public void handleResponse(DeviceRegistrationResult response) {
-
-                deviceClearance = true;
-            }
-
-            @Override
-            public void handleFault(BackendlessFault fault) {
-                Toast.makeText( MainActivity.this, "Error registering " + fault.getMessage(),
-                        Toast.LENGTH_LONG).show();
-            }
-        });
+//        List<String> channels = new ArrayList<String>();
+//        channels.add( "default" ); // channel name for testing
+//            Backendless.Messaging.registerDevice(channels, new AsyncCallback<DeviceRegistrationResult>() {
+//                @Override
+//                public void handleResponse(DeviceRegistrationResult response) {
+//
+//                    deviceClearance = true;
+//                    Toast.makeText( MainActivity.this, "Device Registered! WELCOME",
+//                            Toast.LENGTH_SHORT).show();
+//
+//                }
+//
+//                @Override
+//                public void handleFault(BackendlessFault fault) {
+//
+//                        Toast.makeText( MainActivity.this, "Error registering " + fault.getMessage().trim(),
+//                                Toast.LENGTH_LONG).show();
+//                }
+//            });
+        devRegistraton = regDevice();
         //-------------------------------------
 
-        CountDownTimer count = new CountDownTimer(5000,1000){
-            public void onTick(long millisUntilFinished){
-                timer = false;
-                btnGreeting.setBackground(getResources().getDrawable(R.drawable.button_fade));
-                btnGreeting.setText("Reciving Key");
-            }
-
-            @Override
-            public void onFinish() {
-                if(deviceClearance) {
-                    btnGreeting.setText(buttonGreeting);
-                    btnGreeting.setBackground(getResources().getDrawable(R.drawable.buttons));
-                    timer = true;
-                }
-                else{
-                    Toast.makeText(MainActivity.this,"Failed to get device Clearance",Toast.LENGTH_SHORT).show();
-                }
-            }
-        }.start();
+        if(devRegistraton){
+            devRegistered();
+        }
 
         btnGreeting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,8 +130,9 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString(FirebaseAnalytics.Param.ITEM_ID,"btnGreeting");
                 bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Continue");
                 bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Button");
+                regDevice();
                 mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-                if(deviceClearance && timer) {
+                if(deviceClearance) {
                     startActivity(new Intent(MainActivity.this, SelectBranch.class));
                 }
                 else {
@@ -144,9 +144,95 @@ public class MainActivity extends AppCompatActivity {
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,StartChatActivity.class ));
+                Intent intent = new Intent(MainActivity.this,StartChatActivity.class);
+                intent.putExtra("name", username);
+                startActivity(intent);
             }
         });
+
+    }
+
+    public boolean regDevice(){
+
+        final boolean[] regStatus = {false};
+        List<String> channels = new ArrayList<String>();
+        channels.add( "default" ); // channel name for testing
+
+        Backendless.Messaging.registerDevice(channels, new AsyncCallback<DeviceRegistrationResult>() {
+            @Override
+            public void handleResponse(DeviceRegistrationResult response) {
+
+                deviceClearance = true;
+                Toast.makeText( MainActivity.this, "Device Registered! WELCOME",
+                        Toast.LENGTH_SHORT).show();
+                boolean rg = true;
+
+                regStatus[0] = rg;
+                devRegistered();
+
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+
+                if(devRegError < 5){
+                    Toast.makeText( MainActivity.this, "Error registering " + fault.getMessage().trim(),
+                            Toast.LENGTH_LONG).show();
+                }
+                else{
+
+                    CountDownTimer ct = new CountDownTimer(5000,1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                            ConnectivityManager cm =(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+                            final NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                            boolean isConnected;
+
+                            isConnected = activeNetwork != null &&
+                                    activeNetwork.isConnectedOrConnecting();
+
+                            if(!isConnected){Toast.makeText( MainActivity.this, "Turn on Internet ",
+                                    Toast.LENGTH_SHORT).show();}
+                            regStatus[0] = false;
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            regDevice();
+                            devRegError++;
+                        }
+                    };
+                }
+
+
+            }
+        });
+        return regStatus[0];
+    }
+
+    public void devRegistered(){
+
+        CountDownTimer count = new CountDownTimer(5000,1000){
+            public void onTick(long millisUntilFinished){
+                timer = false;
+                btnGreeting.setBackground(getResources().getDrawable(R.drawable.button_fade));
+                btnGreeting.setText("Getting API Key");
+            }
+
+            @Override
+            public void onFinish() {
+                if(deviceClearance) {
+                    btnGreeting.setText(buttonGreeting);
+                    btnGreeting.setBackground(getResources().getDrawable(R.drawable.buttons));
+                    timer = true;
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"Failed to get device Clearance",Toast.LENGTH_SHORT).show();
+                    regDevice();
+                }
+            }
+        }.start();
 
     }
 
@@ -239,5 +325,12 @@ public class MainActivity extends AppCompatActivity {
     }
     //-------------------------------------------------------------
 
+    private void setUserFromBackendless(){
+
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(myPrefFile,MODE_PRIVATE);
+        username = sharedPreferences.getString("name","");
+
+    }
 
 }

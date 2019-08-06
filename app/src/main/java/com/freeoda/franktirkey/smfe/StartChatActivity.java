@@ -12,18 +12,19 @@ import com.backendless.Backendless;
 
 public class StartChatActivity extends AppCompatActivity {
 
-  private EditText userNameEditText;
+  private String name;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    name = getIntent().getStringExtra("name");
+
+
     Backendless.setUrl(ApplicationClass.SERVER_URL);
     Backendless.initApp(this, ApplicationClass.APPLICATION_ID, ApplicationClass.API_KEY);
 
     setContentView(R.layout.activity_start_char);
-
-    userNameEditText = findViewById(R.id.userName);
 
     Button startChatButton = findViewById(R.id.start_chat_button);
     startChatButton.setOnClickListener(new OnClickListener() {
@@ -36,7 +37,6 @@ public class StartChatActivity extends AppCompatActivity {
 
   private void startChat() {
     Intent intent = new Intent(StartChatActivity.this, ChatRoomActivity.class);
-    String name = userNameEditText.getText().toString();
     intent.putExtra("name", name);
     startActivity(intent);
 
