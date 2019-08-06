@@ -5,9 +5,9 @@ import android.app.Application;
 import com.backendless.Backendless;
 
 public class ApplicationClass extends Application {
-    public static final String APPLICATION_ID = "9BDC094E-E5BB-70DE-FF63-69DAE6EBBD00";
-    public static final String API_KEY = "06F74842-C689-9D32-FFFF-C1217F5A9900";
-    public static final String SERVER_URL = "https://api.backendless.com";
+    public static final String APPLICATION_ID = "";
+    public static final String API_KEY = "";
+    public static final String SERVER_URL = "";
 
         public static final String DEFAULT_CHANNEL = "chat";
 
