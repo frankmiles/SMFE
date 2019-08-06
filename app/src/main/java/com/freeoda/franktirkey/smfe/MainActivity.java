@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAnalytics mFirebaseAnalytics;
     TextView tvGreeting;
-    Button btnGreeting;
+    Button btnGreeting,btnChat;
     String username =" ",buttonGreeting = " ";
     boolean deviceClearance = false,timer = false ;
     public static final String myPrefFile = "com.franktirkey.freeoda.prefFile";
@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
         tvGreeting = findViewById(R.id.tvGreeting);
         btnGreeting = findViewById(R.id.btnGreet);
+        btnChat = findViewById(R.id.btnChat);
+
         buttonGreeting = btnGreeting.getText().toString();
         SharedPreferences pref = getSharedPreferences(myPrefFile,MODE_PRIVATE);
         tvGreeting.setText("WELCOME "+pref.getString("user", " ")+
@@ -138,6 +140,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,StartChatActivity.class ));
+            }
+        });
+
     }
 
     @Override
@@ -228,5 +238,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     //-------------------------------------------------------------
+
 
 }

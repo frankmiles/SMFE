@@ -41,4 +41,8 @@
     <string name="progress_board">Progress Board</string>
     <string name="now_in_development_phase">Now in Development phase!</string>
     <string name="version">Version: 8.1.0</string>
+    <string name="chat">CHAT</string>
+    <string name="message">Message</string>
+    <string name="user_name">User Name</string>
+    <string name="start_chat">Start Chat</string>
 </resources>

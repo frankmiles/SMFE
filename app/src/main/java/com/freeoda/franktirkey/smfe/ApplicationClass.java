@@ -9,6 +9,8 @@ public class ApplicationClass extends Application {
     public static final String API_KEY = "06F74842-C689-9D32-FFFF-C1217F5A9900";
     public static final String SERVER_URL = "https://api.backendless.com";
 
+        public static final String DEFAULT_CHANNEL = "chat";
+
     @Override
     public void onCreate() {
         super.onCreate();
