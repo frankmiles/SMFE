@@ -6,8 +6,8 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 
 public class ApplicationClass extends Application {
-    public static final String APPLICATION_ID = "9BDC094E-E5BB-70DE-FF63-69DAE6EBBD00";
-    public static final String API_KEY = "B6ACFDC2-15FC-4EDB-84B7-60B459EACDD2";
+    public static final String APPLICATION_ID = "";
+    public static final String API_KEY = "";
     public static final String SERVER_URL = "https://api.backendless.com";
 
 
